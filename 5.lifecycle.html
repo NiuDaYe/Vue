@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>viewmodel</title>
+    <script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+  </head>
+  <body>
+      <div class="app">
+          {{hello}}
+          <input type="text" v-model='hello'>
+      </div>
+  </body>
+</html>
+
+<script>
+var vm = new Vue({
+    data:{
+        hello:'你好1'
+    },
+    created: function () {alert('实例创建完成');},
+    beforeCompile: function () {alert('开始编译前')},
+    compiled: function () {alert('编译完成')},
+    ready: function () {alert('准备好了')},
+    beforeDestroy: function () {alert('准备销毁')},
+    destroyed: function () {alert("销毁")}
+  });
+vm.$mount('.app');
+vm.$destroy();
+
+
+
+
+</script>
