@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue</title>
+    <script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+	<script>
+	window.onload = function(){
+
+		var app = new Vue({
+			el:'#app',
+			data : {
+				mess : '11111111'
+			}
+		})
+
+
+		var app2 = new Vue({
+			el:'#app2',
+			data:{
+				mess : '加载时间为' + new Date()
+			}
+		})
+
+
+		var app3 = new Vue({
+			el:'#app3',
+			data:{
+				scc : true
+			}
+		})
+
+		var app4 = new Vue({
+			el:'#app4',
+			data:{
+				tool:[
+					{ text:'1111' },
+					{ text:'2222' },
+					{ text:'3333' },
+					{ text:'4444' }
+				]
+			}
+		})
+
+
+		var app5 = new Vue({
+			el : '#app5',
+			data:{
+				mess : '点击下面按钮:'
+			},
+			methods:{
+				events:function(){
+				this.mess = 'sadfasdfasdf';
+			}
+			}
+		})
+
+		var app6 = new Vue({
+			el : '#app6',
+			data:{
+				mess : 'hello vue!'
+			}
+		});
+
+
+
+		// 组件化模板
+
+		Vue.component('todotme',{
+			props : ['zujian'],
+			template : '<li> {{zujian.txt}} </li>'
+		})
+
+		var app7 = new Vue({
+			el : '#app7',
+			data:{
+				getList:[
+					{txt : '111111'},
+					{txt : '222222'},
+					{txt : '333333'},
+					{txt : '444444'}
+				]
+			}
+		})
+	}
+	</script>
+</head>
+<body>
+
+	<div id="app">
+		{{mess}}
+	</div>
+
+	<div id="app2">
+		<span v-bind:title='mess'> 鼠标浮动看消息 </span>
+	</div>
+
+
+	<div id="app3">
+		<p v-if="scc"> 你看到我了 </p>
+	</div>
+
+	<div id="app4">
+		<p v-for="doo in tool">
+			{{ doo.text }}
+		</p>
+	</div>
+
+
+	<div id="app5">
+		<p>{{mess}}</p>
+		<span v-on:click="events">点我</span>
+	</div>
+
+	
+	<div id="app6">
+		<p>{{ mess }}</p>
+		<input type="text" v-model = 'mess'>
+	</div>
+
+	<!-- 组件化应用构建 -->
+
+	<div id="app7">
+		<ul>
+			<todotme v-for="item in getList" v-bind:zujian = "item"></todotme>
+		</ul>
+	</div>
+
+</body>
+</html>

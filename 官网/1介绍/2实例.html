@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实例</title>
+    <script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+	<script>
+	window.onload = function(){
+
+		var data = {a:1};
+		var vm = new Vue({
+			data : data
+		})
+
+		//vm.a = '234'
+		data.b = '456';
+		//console.log(vm.a);
+		//console.log(data.a);
+
+		//console.log(vm.b);//undefined
+
+
+		var dd = {a:1};
+		var vmm = new Vue({
+			el : '#box',
+			data : dd
+		})
+
+		//console.log(vmm.$data == dd)
+		//console.log(vmm.$el === document.getElementById('box'));
+
+		
+		var vmmm = new Vue({
+			el :'#mmm',
+			data:{
+				a : '100001'
+			},
+			created : function(){
+				console.log(this.a)
+			}
+		})
+
+	}
+	</script>
+</head>
+<body>
+	而我
+	<div id="box"></div>
+	<div id="mmm"></div>
+</body>
+</html>

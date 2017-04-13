@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>暴露实例属性的方法</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+
+</head>
+<body>
+	<div class="box">
+		
+	</div>
+
+	<script>
+		var da = {name:'niu'};
+
+		var app = new Vue({
+			el : '.box',
+			data : da
+		})
+
+		console.log(app.$data.name == da.name)
+	</script>
+</body>
+</html>

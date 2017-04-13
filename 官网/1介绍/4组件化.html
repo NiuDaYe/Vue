@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件化</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+
+</head>
+<body>
+	<div class="box">
+		<todo> </todo>
+	</div>
+
+	<script>
+		//先定义一个新组件
+		Vue.component('todo',{
+			template : '<li> 这是一个模板 </li>'
+		})
+
+		var app = new Vue({
+			el : '.box',
+			data : {
+				
+			}
+		})
+	</script>
+</body>
+</html>

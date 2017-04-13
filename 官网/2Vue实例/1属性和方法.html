@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性和方法</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+
+</head>
+<body>
+	<div class="box">
+		<div>{{name}}</div>
+	</div>
+
+
+	<script>
+
+		var dd = {
+			name : 'niu',
+			age : '22'
+		}
+		var app = new Vue({
+			el : '.box',
+			data : dd
+		})
+		console.log(app.name === dd.name)	//true
+
+		app.name = "niuyulei"	// 会改变
+		console.log(dd.name)
+	</script>
+</body>
+</html>

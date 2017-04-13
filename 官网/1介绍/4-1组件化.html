@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件化</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+
+</head>
+<body>
+	<div class="box">
+		
+		<todo v-for = "item in list" v-bind:aa = "item"></todo>
+		
+	</div>
+
+	<script>
+		//先定义一个新组件
+		Vue.component('todo',{
+			props : ['aa'],
+			template : '<li> {{aa.name}} </li>'
+		})
+
+
+
+		var app = new Vue({
+			el : '.box',
+			data : {
+				list : [
+					{name :'niu'},
+					{name : 'li'},
+					{name : 'wang'}
+				]
+			}
+		})
+	</script>
+</body>
+</html>
