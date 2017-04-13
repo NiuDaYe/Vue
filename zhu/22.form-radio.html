@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+</head>
+
+<body>
+	<div id="box">
+		<input type="radio" v-model = "radio" value="男">
+		<input type="radio" v-model = "radio" value="女">
+		{{radio }}
+	</div>
+	<script>
+		var app = new Vue({
+			el : '#box',
+			data : {
+				radio : []
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>修饰符</title>
+    <script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+  </head>
+  <body>
+    <div class="box">
+      <div class="parent" @click.self = 'parent'>
+          父亲
+          <div>qwerwqerwqerwqerqwerwqer</div>
+          <!-- <div class="chrild" @click.stop = 'child'> -->
+          <div class="chrild" @click = 'child'>
+              孩子
+          </div>
+      </div>
+      <a href="http://www.baidu.com" @click.prevent>todosome</a>
+      <input type="text" name="" value="" @keyup.enter = 'keyup'>
+    </div>
+
+
+
+    <script>
+      var app = new Vue({
+        el : '.box',
+        data:{
+
+        },
+        methods : {
+          parent(){
+            alert('父亲！');
+          },
+          child(){
+            alert('孩子！');
+          },
+          keyup(){
+            alert('鼠标抬起！')
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
