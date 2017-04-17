@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-if</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+</head>
+<body>
+	<div class="box">
+		<p v-if = 'ok'> 条件成立 </p>
+		<p v-else>不成立</p>
+	</div>
+	<script>
+		var app = new Vue({
+			el : '.box',
+			data : {
+				ok : false	//为true成立  false不成立
+			}
+		})
+	</script>
+</body>
+</html>

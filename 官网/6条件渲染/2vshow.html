@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-show</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+
+</head>
+<body>
+	<div class="box">
+		<p v-show = 'ok'>v-show渲染</p>
+	</div>
+	<script>
+		var app = new Vue({
+			el : '.box',
+			data : {
+				ok : true
+			}
+		})
+	</script>
+</body>
+</html>

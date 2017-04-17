@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件和vfor</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+</head>
+<body>
+	<div class="box">
+		<input
+		    v-model="newTodoText"
+		    v-on:keyup.enter="addNewTodo"
+		    placeholder="Add a todo"
+		  >
+		  <ul>
+		    <li
+		      is="todo-item"
+		      v-for="(todo, index) in todos"
+		      v-bind:title="todo"
+		      v-on:remove="todos.splice(index, 1)"
+		    ></li>
+		  </ul>
+	</div>
+	<script>
+		Vue.component('todo-item', {
+			  template: '\
+			    <li>\
+			      {{ title }}\
+			      <button v-on:click="$emit(\'remove\')">X</button>\
+			    </li>\
+			  ',
+			  props: ['title']
+			})
+			new Vue({
+			  el: '.box',
+			  data: {
+			    newTodoText: '',
+			    todos: [
+			      'Do the dishes',
+			      'Take out the trash',
+			      'Mow the lawn'
+			    ]
+			  },
+			  methods: {
+			    addNewTodo: function () {
+			      this.todos.push(this.newTodoText)
+			      this.newTodoText = ''
+			    }
+			  }
+			})
+	</script>
+</body>
+</html>
