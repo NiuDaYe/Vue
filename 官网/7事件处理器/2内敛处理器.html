@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内联处理器</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+</head>
+<body>
+	<div class="box">
+		<p v-on:click = "say('mess')">lalalalal</p>
+		<p v-on:click = "say('mess')">44444444</p>
+	</div>
+	<script>
+		var app = new Vue({
+			el : '.box',
+			data : {
+				
+			},
+			methods : {
+				say(mess){
+					alert(mess);
+					//alert(event.target.tagName);
+				}
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>方法事件处理器</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+</head>
+<body>
+	<div class="box">	
+		<button v-on:click = "get">
+			asdfasdfasfd
+		</button>
+	</div>
+
+	<script>
+
+		var app = new Vue({
+			el : '.box',
+			data : {
+				name : 'vue'
+			},
+			methods : {
+				get(){
+					alert(this.name);
+				}
+			}
+		})
+
+
+		// app.get(); 直接调用
+	</script>
+</body>
+</html>
