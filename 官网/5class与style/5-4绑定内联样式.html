@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绑定内联样式</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+
+</head>
+<body>
+	<div class="box">
+		<!-- <p  v-bind:style = "{color: 'red'}">
+			这是内联样式
+		</p> -->
+		<!-- <p  v-bind:style = "{color: activeColor}">
+			这是内联样式
+		</p> -->
+		<!-- <p v-bind:style = "objClass">对象语法的内联样式</p>-->	
+		
+		<p v-bind:style = "[objClass]">数组语法内联样式</p>
+
+	</div>
+
+	<script>
+		var app = new Vue({
+			el : '.box',
+			data : {
+				activeColor : 'red',
+				objClass : {
+					color: 'blue',
+					fontSize : '30px'
+				}
+			}
+		})
+	</script>
+</body>
+</html>

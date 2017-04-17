@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件上的class</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+
+</head>
+<body>
+	<div class="box">
+		<tem class="bb" v-bind:class = "{active : cla}"></tem>	
+ 	</div>
+
+	
+	<script>
+		Vue.component('tem',{
+			template : '<p class="aa cc"> 这是一个 </p>'
+		})
+
+		var app = new Vue({
+			el : '.box',
+			data : {
+				cla : 'true'
+			}
+		})
+	</script>
+</body>
+</html>
