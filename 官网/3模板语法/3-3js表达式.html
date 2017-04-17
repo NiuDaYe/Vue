@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> js表达式 </title>
+</head>
+<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+<body>
+	<div id="box">
+		<p>
+			{{ok ? 'yes' : 'no'}}  <br/>
+			{{nok + 1}}  <br/>
+			{{ res.split('').reverse().join('') }}
+
+		</p>
+	</div>
+
+	<script>
+		var app = new Vue({
+			el : '#box',
+			data : {
+				//ok : '22',
+				nok : 12345678,
+				res : 'abcde'
+			},
+		})
+		
+	</script>
+</body>
+</html>

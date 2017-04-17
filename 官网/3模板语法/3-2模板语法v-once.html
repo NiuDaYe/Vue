@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> v-once </title>
+</head>
+<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+<body>
+	<div id="box">
+		<p v-once>{{name}}</p>
+	</div>
+
+	<script>
+		var app = new Vue({
+			el : '#box',
+			data : {
+				name : 'lalalalalla'
+			},
+		})
+		
+		setTimeout(function(){
+			app.name = "11111111111111111111";
+		},3000)
+	</script>
+</body>
+</html>

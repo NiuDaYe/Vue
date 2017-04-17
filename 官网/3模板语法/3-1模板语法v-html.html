@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板语法</title>
+</head>
+    <script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+
+<script>
+	window.onload = function(){
+		var vm = new Vue({
+			el : '#box',
+			data : {
+				ht : '<ul> <li>1</li><li>2</li><li>3</li></ul>'
+			}
+		})
+	}
+</script>
+
+<body>
+<!-- 	<div id="box">{{ht}}</div>	-->	
+	
+	<br/><br/><br/><br/>
+	<div id="box" v-html='ht'></div>
+</body>
+</html>

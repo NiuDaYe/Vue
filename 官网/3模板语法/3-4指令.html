@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>指令   绑定URL参数</title>
+</head>
+<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+
+<script>
+	window.onload = function(){
+		var vm = new Vue({
+			el:'#box',
+			data:{
+				url:'wwww.baidu.com',
+				//sen: ' '	//若sen有值  则会显示出来
+				sen : true //为true 显示出来  为false隐藏
+			},
+			methods : {
+				dosomething(){
+					alert('绑定点击事件');
+				}
+			}
+		})
+	}
+</script>
+<body>
+	<div id="box">
+		<a v-bind:href="url">111111</a>
+		<p v-if="sen">显示出来</p>
+		<button v-on:click = 'dosomething'>点我</button>
+	</div>
+</body>
+</html>
