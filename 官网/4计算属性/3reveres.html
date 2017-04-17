@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>reveres</title>
+	<script src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js'></script>
+</head>
+<body>
+	<div class="box">
+		{{ mess.split('').reverse().join('') }}
+	</div>
+
+	<script>
+		var myvue = new Vue({
+			el : '.box',
+			data : {
+				mess : 'abcdefg'
+			}
+		})
+	</script>
+	
+</body>
+</html>
