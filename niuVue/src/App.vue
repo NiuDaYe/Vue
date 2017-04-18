@@ -3,11 +3,13 @@
     <img src="./assets/logo.png">
     {{msg}}
     <firstcomponent></firstcomponent>
+    <secondcomponent></secondcomponent>
   </div>
 </template>
 
 <script>
 import firstcomponent from './component/firstcomponent.vue'
+import secondcomponent from './component/secondcomponent.vue'
 
 export default {
   data () {
@@ -15,7 +17,7 @@ export default {
       msg: 'Hello Vue!'
     }
   },
-  components: { firstcomponent }
+  components: { firstcomponent ,secondcomponent}
 }
 </script>
 

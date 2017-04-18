@@ -1,6 +1,6 @@
 <template>
   <div id="firstcomponent">
-    <h1>I am a title.</h1>
+    <h1>I am firstcomponent page</h1>
     <a> write by {{ author }} </a>
   </div>
 </template>
