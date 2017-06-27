@@ -1,0 +1,48 @@
+html, body, div, h1, h2, h3, h4, h5, h6, span, p, input, ul, ol, li, button, img, select, textarea, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  outline-style: none;
+  font-size: 12px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: "-apple-system, BlinkMacSystemFont, 'PingFang SC','Helvetica Neue',STHeiti,'Microsoft Yahei',Tahoma,Simsun,sans-serif";
+}
+
+html, body {
+  height:100%;
+  min-width: 320px;
+  max-width: 750px;
+  position: relative;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+  -moz-user-select: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.router-link-active {
+  text-decoration: none;
+  color: #000;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+input[type="submit"], input[type="reset"], input[type="button"], button {
+  -webkit-appearance: none;
+  outline: none /*去掉苹果的默认UI来渲染按钮*/
+}
